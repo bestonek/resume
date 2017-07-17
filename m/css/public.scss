@@ -1,0 +1,42 @@
+@mixin centerbox($ps:fixed, $lr:auto, $tb:auto) {
+	position: $ps;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: $tb $lr;
+}
+@mixin bg(){
+	background: url(../images/c.png) no-repeat center;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.content-box {
+	@include centerbox();
+	.background-ani-box{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		.main-box{
+			width: 2.55rem;
+			height: 2.55rem;
+			background: url(../images/c.png) no-repeat center;
+			background-size: 100%;
+			position: absolute;
+			left: 1rem;
+			top: 1rem;
+			div{
+				border-radius: 50%;
+				@include centerbox(absolute);
+			}
+			div{
+				width: 2rem;
+				height: 2rem;
+				background: url(../images/c.png) no-repeat center;
+				background-size: 100%;
+				box-shadow: 0 0 .5rem red;
+			}
+		}
+	}
+}
